@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Support Vector Machine Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    
+        h1 {
+            color: #778ba5;
+        }
+    
+        h4 {
+            color: #ae2ccf;
+        }
+    
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+    
+        input[type="text"] {
+            width: 200px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        input[type="submit"] {
+            width: 100px;
+            background-color: #aad8a6;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    
+        li {
+            list-style-type: none;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h1>SVM Model for Midterm, Part 2</h1>
+    <h4>Author:  Kamika Hughes</h4>
+    <p>Model will take scores in read, writing and math scores.  Scores are numbers between 1-100</p>
+
+    <form action="{{ url_for('predict')}}" method="POST">
+        Reading Score:  <input type="text" name="reading_score"></br>
+        Writing Score:  <input type="text" name="writing_score"></br>
+	    Math Score:  <input type="text" name="math_score"></br>
+
+        <input type=submit value=Submit>
+   </form>
+    <h2>Prediction: {{ predict }}</h2>
+    <p>Value indicates what group you are sorted into based on your scores.</p>
+    <p>There are 5 groups, coded as follows: </p>
+    <ul>
+        <li>0 = Group A</li>
+        <li>1 = Group B</li>
+        <li>2 = Group C</li>
+        <li>3 = Group D</li>
+        <li>4 = Group E</li>
+      </ul>  
+    <h2>Software & Frameworks</h2>
+    <p>Python, Pandas, Numpy, Seaborn, Matplotlib, Scikit-learn</p>
+    <p>Heroku and GitHub for continious deployment and integration</p>
+    <p>html and css for front-end</p>
+    <p>Flask for back-end</p>
+</body>
+</html>
